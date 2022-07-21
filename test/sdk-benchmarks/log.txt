@@ -1,0 +1,371 @@
+[INFO] [2022-07-21T20:56:43Z] [00007f797fdff700] [connection-manager] - id=0x7f79786868f0: Successfully created
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http2-stream-manager] - id=0x7f797870e310: Stream Manager creates acquisition:0x7f7978717660 for user
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7978717660 cannot find any connection to use.
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http2-stream-manager] - id=0x7f797870e310: number of acquisition that waiting for connections to use=1. connection acquiring=1, connection held=0, max connection=50
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=1, streams opening=0, pending make request count=0, pending acquisition count=1, holding connections count=0
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http2-stream-manager] - id=0x7f797870e310: acquiring 1 new connections
+[DEBUG] [2022-07-21T20:56:43Z] [00007f797fdff700] [connection-manager] - id=0x7f79786868f0: Acquire connection
+[DEBUG] [2022-07-21T20:56:43Z] [00007f797fdff700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=0, pending_acquire_count=1, pending_settings_count=0, pending_connect_count=1, vended_connection_count=0, open_connection_count=0, ref_count=1
+[INFO] [2022-07-21T20:56:43Z] [00007f797fdff700] [connection-manager] - id=0x7f79786868f0: Requesting 1 new connections from http
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [http-connection] - static: attempting to initialize a new client channel to localhost:37541
+[TRACE] [2022-07-21T20:56:43Z] [00007f797fdff700] [channel-bootstrap] - id=0x7f7978489cd0: attempting to initialize a new client channel to localhost:37541
+[DEBUG] [2022-07-21T20:56:43Z] [00007f797fdff700] [dns] - id=0x7f7978489d90: Host resolution requested for localhost
+[DEBUG] [2022-07-21T20:56:43Z] [00007f797fdff700] [dns] - id=0x7f7978489d90: No cached entries found for localhost starting new resolver thread.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: new address resolved 127.0.0.1 for host localhost caching
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static: vending address 127.0.0.1 for host localhost to caller
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78acbfa700] [dns] - static, invoking resolution callback for host localhost with 1 addresses
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [channel-bootstrap] - id=0x7f7978489cd0: dns resolution completed. Kicking off connections on 1 addresses. First one back wins.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [event-loop] - id=0x7f79784861d0: Scheduling task 0x7f78900019b0 cross-thread for timestamp 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78acbfa700] [event-loop] - id=0x7f79784861d0: Waking up event-loop thread
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 81, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: notified of cross-thread tasks to schedule
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: processing cross-thread tasks
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: task 0x7f78900019b0 pulled to event-loop, scheduling now.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78900019b0: Scheduling attempt_connection task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78900019b0: Running attempt_connection task with <Running> status
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: initializing with domain 0 and type 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: setting socket options to: keep-alive 0, keep idle 0, keep-alive interval 0, keep-alive probe count 0.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: beginning connect.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: connecting to endpoint 127.0.0.1:37541.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: connection pending waiting on event-loop notification or timeout.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: subscribing to events on fd 98
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: scheduling timeout task for 1915149739495149.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f788c000bf0 in-thread for timestamp 1915149739495149
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f788c000bf0: Scheduling (null) task for future execution at time 1915149739495149
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2999987556, using timeout of 2999.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2999 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 98, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - fd=98: connection activity handler triggered 
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: has not timed out yet proceeding with connection.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: un-subscribing from events on fd 98
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0001d90 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001d90: Scheduling epoll_event_loop_unsubscribe_cleanup task for immediate execution
+[INFO] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: connection success
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: assigning to event loop 0x7f79784861d0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: subscribing to events on fd 98
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: client connection on socket 0x7f78b0001460 completed with error 0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: Successful connection, creating a new channel using socket 0x7f78b0001460.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: Beginning creation and setup of new channel.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0003460 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003460: Scheduling on_channel_setup_complete task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001d90: Running epoll_event_loop_unsubscribe_cleanup task with <Running> status
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003460: Running on_channel_setup_complete task with <Running> status
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: setup complete, notifying caller.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: no message pool is currently stored in the event-loop local storage, adding 0x7f78b0003b10 with max message size 262144, message count 4, with 4 small blocks of 128 bytes.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: channel 0x7f78b0003040 setup succeeded: bootstrapping.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: creating new slot 0x7f78b0104120.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: Socket handler created with max_read_size of 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] -  id=0x7f78b0001460 fd=98: subscribing to readable events
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: Setting up socket handler on channel 0x7f78b0003040 with handler 0x7f78b0104a80 on slot 0x7f78b0104120.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b00032c8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b00032c8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Scheduling window update task task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: creating new slot 0x7f78b0003d30.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: Setting up client TLS on channel 0x7f78b0003040 with handler 0x7f78b0105300 on slot 0x7f78b0003d30
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Kicking off TLS negotiation.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b0105330.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0105330 in-thread for timestamp 1915156739661530
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0105330: Scheduling tls_timeout task for future execution at time 1915156739661530
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 276 from pool 0x7f78b0003b10. Requested size was 276
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending write message of size 276, from slot 0x7f78b0003d30 to slot 0x7f78b0104120 with handler 0x7f78b0104a80.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: writing message of size 276
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, called from aws_socket_write
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: dequeued write request of size 276, remaining to write 276
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: send written size 276
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: remaining write request to write 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: write request completed
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0001600 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001600: Scheduling socket_written_task task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 0, using timeout of 0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 0 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 98, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is writable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, invoked by the event-loop
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Running window update task task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: increment read window message received, scheduling task for another read operation.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b0104ab8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0104ab8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Scheduling socket_handler_read_on_window_increment task for immediate execution
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001600: Running socket_written_task task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - static: write of size 276, completed on channel 0x7f78b0003040
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 0, using timeout of 0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 0 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 0 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Running socket_handler_read_on_window_increment task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: invoking read. Downstream window 7168, max_to_read 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7168 from pool 0x7f78b0003b10. Requested size was 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read would block
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104140: total read on this tick 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: out of data to read on socket. Waiting on event-loop notification.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2999626620, using timeout of 2999.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2999 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 98, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is readable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: socket is now readable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: invoking read. Downstream window 7168, max_to_read 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7168 from pool 0x7f78b0003b10. Requested size was 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of 127
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: read 127 from socket
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending read message of size 127, from slot 0x7f78b0104120 to slot 0x7f78b0003d30 with handler 0x7f78b0105300.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b00032c8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b00032c8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Scheduling window update task task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7041 from pool 0x7f78b0003b10. Requested size was 7041
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of 6
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: read 6 from socket
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending read message of size 6, from slot 0x7f78b0104120 to slot 0x7f78b0003d30 with handler 0x7f78b0105300.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7035 from pool 0x7f78b0003b10. Requested size was 7035
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read would block
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104140: total read on this tick 133
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: out of data to read on socket. Waiting on event-loop notification.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is writable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, invoked by the event-loop
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Running window update task task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: increment read window message received, scheduling task for another read operation.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b0104ab8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0104ab8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Scheduling socket_handler_read_on_window_increment task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 0, using timeout of 0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 0 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 98, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is writable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, invoked by the event-loop
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Running socket_handler_read_on_window_increment task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: invoking read. Downstream window 7168, max_to_read 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7168 from pool 0x7f78b0003b10. Requested size was 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read would block
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104140: total read on this tick 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: out of data to read on socket. Waiting on event-loop notification.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2876315371, using timeout of 2876.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2876 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 98, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is readable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: socket is now readable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: invoking read. Downstream window 7168, max_to_read 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 7168 from pool 0x7f78b0003b10. Requested size was 7168
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of 1294
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: read 1294 from socket
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending read message of size 1294, from slot 0x7f78b0104120 to slot 0x7f78b0003d30 with handler 0x7f78b0105300.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b01044d0 of capacity 6 from pool 0x7f78b0003b10. Requested size was 6
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending write message of size 6, from slot 0x7f78b0003d30 to slot 0x7f78b0104120 with handler 0x7f78b0104a80.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: writing message of size 6
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, called from aws_socket_write
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: dequeued write request of size 6, remaining to write 6
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: send written size 6
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: remaining write request to write 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: write request completed
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0001600 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001600: Scheduling socket_written_task task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b01043b0 of capacity 74 from pool 0x7f78b0003b10. Requested size was 74
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: sending write message of size 74, from slot 0x7f78b0003d30 to slot 0x7f78b0104120 with handler 0x7f78b0104a80.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: writing message of size 74
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, called from aws_socket_write
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: dequeued write request of size 74, remaining to write 74
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: send written size 74
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: remaining write request to write 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: write request completed
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Remote server name is localhost
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel-bootstrap] - id=0x7f7978489cd0: tls negotiation result 0 on channel 0x7f78b0003040
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http-connection] - static: Socket connected, creating client connection object.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: creating new slot 0x7f78b0003aa0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b00032c8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b00032c8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Scheduling window update task task for immediate execution
+[INFO] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http-connection] - id=0x7f78b0115da0: HTTP/1.1 client connection established.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Received new connection (id=0x7f78b0115da0) from http layer
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Grabbing pooled connection (0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=0, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=1, open_connection_count=1, ref_count=1
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Successfully completed connection acquisition with connection id=0x7f78b0115da0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: connection=0x7f78b0115da0 acquired from connection manager
+[ERROR] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Unexpected HTTP version acquired, release the connection=0x7f78b0115da0 acquired immediately
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: User releasing connection (id=0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=1, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=0, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=0, streams opening=0, pending make request count=0, pending acquisition count=0, holding connections count=0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [aws-c-common] - s_aws_jni_get_thread_env returned detached, attaching
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7978717660 failed with error: 2088(Stream acquisition failed because stream manager got an unexpected version of HTTP connection)
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 5874 from pool 0x7f78b0003b10. Requested size was 5874
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read would block
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104140: total read on this tick 1294
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: out of data to read on socket. Waiting on event-loop notification.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: is writable
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: processing write requests, invoked by the event-loop
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0001600: Running socket_written_task task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - static: write of size 6, completed on channel 0x7f78b0003040
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - static: write of size 74, completed on channel 0x7f78b0003040
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b00032c8: Running window update task task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Increment read window message received 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Propagating read window increment of size 257118
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b0105438.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0105438 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0105438: Scheduling s2n_channel_handler_read_on_window_increment task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: increment read window message received, scheduling task for another read operation.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f78b0104ab8.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: scheduling task 0x7f78b0104ab8 in-thread for timestamp 0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Scheduling socket_handler_read_on_window_increment task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 0, using timeout of 0.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 0 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 0 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0105438: Running s2n_channel_handler_read_on_window_increment task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Downstream window 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 262144 from pool 0x7f78b0003b10. Requested size was 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Bytes read -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [tls-handler] - id=0x7f78b0105300: Remaining window for this event-loop tick: 262144
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0104ab8: Running socket_handler_read_on_window_increment task with <Running> status
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: invoking read. Downstream window 264286, max_to_read 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [channel] - id=0x7f78b0003040: acquired message 0x7f78b00c4080 of capacity 262144 from pool 0x7f78b0003b10. Requested size was 262144
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read of -1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket] - id=0x7f78b0001460 fd=98: read would block
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104140: total read on this tick 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [socket-handler] - id=0x7f78b0104a80: out of data to read on socket. Waiting on event-loop notification.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2860724461, using timeout of 2860.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2860 ms
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: Stream Manager creates acquisition:0x7f7874001a60 for user
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7874001a60 cannot find any connection to use.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: number of acquisition that waiting for connections to use=1. connection acquiring=1, connection held=0, max connection=50
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=1, streams opening=0, pending make request count=0, pending acquisition count=1, holding connections count=0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: acquiring 1 new connections
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: Acquire connection
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: Grabbing pooled connection (0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=0, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=1, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f7874002060 from outside the event-loop thread.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [event-loop] - id=0x7f79784861d0: Scheduling task 0x7f78b0003200 cross-thread for timestamp 0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78ac1f9700] [event-loop] - id=0x7f79784861d0: Waking up event-loop thread
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 81, invoking handler.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: notified of cross-thread tasks to schedule
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: processing cross-thread tasks
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: task 0x7f78b0003200 pulled to event-loop, scheduling now.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Scheduling schedule_cross_thread_tasks task for immediate execution
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Running schedule_cross_thread_tasks task with <Running> status
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Successfully completed connection acquisition with connection id=0x7f78b0115da0
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: connection=0x7f78b0115da0 acquired from connection manager
+[ERROR] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Unexpected HTTP version acquired, release the connection=0x7f78b0115da0 acquired immediately
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: User releasing connection (id=0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=1, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=0, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=0, streams opening=0, pending make request count=0, pending acquisition count=0, holding connections count=0
+[DEBUG] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7874001a60 failed with error: 2088(Stream acquisition failed because stream manager got an unexpected version of HTTP connection)
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2818990811, using timeout of 2818.
+[TRACE] [2022-07-21T20:56:43Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2818 ms
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: Stream Manager creates acquisition:0x7f7874001a60 for user
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7874001a60 cannot find any connection to use.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: number of acquisition that waiting for connections to use=1. connection acquiring=1, connection held=0, max connection=50
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=1, streams opening=0, pending make request count=0, pending acquisition count=1, holding connections count=0
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [http2-stream-manager] - id=0x7f797870e310: acquiring 1 new connections
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: Acquire connection
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: Grabbing pooled connection (0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=0, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=1, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f7874004570 from outside the event-loop thread.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [event-loop] - id=0x7f79784861d0: Scheduling task 0x7f78b0003200 cross-thread for timestamp 0
+[TRACE] [2022-07-21T20:56:44Z] [00007f78ac1f9700] [event-loop] - id=0x7f79784861d0: Waking up event-loop thread
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 81, invoking handler.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: notified of cross-thread tasks to schedule
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: processing cross-thread tasks
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: task 0x7f78b0003200 pulled to event-loop, scheduling now.
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Scheduling schedule_cross_thread_tasks task for immediate execution
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Running schedule_cross_thread_tasks task with <Running> status
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Successfully completed connection acquisition with connection id=0x7f78b0115da0
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: connection=0x7f78b0115da0 acquired from connection manager
+[ERROR] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Unexpected HTTP version acquired, release the connection=0x7f78b0115da0 acquired immediately
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: User releasing connection (id=0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=1, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=0, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=0, streams opening=0, pending make request count=0, pending acquisition count=0, holding connections count=0
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f7874001a60 failed with error: 2088(Stream acquisition failed because stream manager got an unexpected version of HTTP connection)
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2666922616, using timeout of 2666.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2666 ms
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [http2-stream-manager] - id=0x7f797870e310: Stream Manager creates acquisition:0x7f786c005330 for user
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f786c005330 cannot find any connection to use.
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [http2-stream-manager] - id=0x7f797870e310: number of acquisition that waiting for connections to use=1. connection acquiring=1, connection held=0, max connection=50
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=1, streams opening=0, pending make request count=0, pending acquisition count=1, holding connections count=0
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [http2-stream-manager] - id=0x7f797870e310: acquiring 1 new connections
+[DEBUG] [2022-07-21T20:56:44Z] [00007f7883cfe700] [connection-manager] - id=0x7f79786868f0: Acquire connection
+[DEBUG] [2022-07-21T20:56:44Z] [00007f7883cfe700] [connection-manager] - id=0x7f79786868f0: Grabbing pooled connection (0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:44Z] [00007f7883cfe700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=0, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=1, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [channel] - id=0x7f78b0003040: scheduling task with wrapper task id 0x7f786c005c40 from outside the event-loop thread.
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [event-loop] - id=0x7f79784861d0: Scheduling task 0x7f78b0003200 cross-thread for timestamp 0
+[TRACE] [2022-07-21T20:56:44Z] [00007f7883cfe700] [event-loop] - id=0x7f79784861d0: Waking up event-loop thread
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 1 events to process.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: activity on fd 81, invoking handler.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: notified of cross-thread tasks to schedule
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: processing cross-thread tasks
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: task 0x7f78b0003200 pulled to event-loop, scheduling now.
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Scheduling schedule_cross_thread_tasks task for immediate execution
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f78b0003200: Running schedule_cross_thread_tasks task with <Running> status
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: Successfully completed connection acquisition with connection id=0x7f78b0115da0
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: connection=0x7f78b0115da0 acquired from connection manager
+[ERROR] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Unexpected HTTP version acquired, release the connection=0x7f78b0115da0 acquired immediately
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: User releasing connection (id=0x7f78b0115da0)
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [connection-manager] - id=0x7f79786868f0: snapshot - state=1, idle_connection_count=1, pending_acquire_count=0, pending_settings_count=0, pending_connect_count=0, vended_connection_count=0, open_connection_count=1, ref_count=1
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: Stream manager internal counts status: connection acquiring=0, streams opening=0, pending make request count=0, pending acquisition count=0, holding connections count=0
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [http2-stream-manager] - id=0x7f797870e310: acquisition:0x7f786c005330 failed with error: 2088(Stream acquisition failed because stream manager got an unexpected version of HTTP connection)
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 2311185785, using timeout of 2311.
+[TRACE] [2022-07-21T20:56:44Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 2311 ms
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437034682084288
+[TRACE] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:44Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[DEBUG] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437035682217296
+[TRACE] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:45Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[TRACE] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: wake up with 0 events to process.
+[TRACE] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: running scheduled tasks.
+[DEBUG] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [task-scheduler] - id=0x7f788c000bf0: Running (null) task with <Running> status
+[DEBUG] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [socket] - task_id=0x7f788c000bf0: timeout task triggered, evaluating timeouts.
+[TRACE] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437036682370942
+[TRACE] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: detected more scheduled tasks with the next occurring at 6999926279, using timeout of 6999.
+[TRACE] [2022-07-21T20:56:46Z] [00007f78c6bfd700] [event-loop] - id=0x7f79784861d0: waiting for a maximum of 6999 ms
+[TRACE] [2022-07-21T20:56:46Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[DEBUG] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437037682539744
+[TRACE] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:47Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[DEBUG] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437038682676362
+[TRACE] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:48Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[DEBUG] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static: resolving host localhost
+[DEBUG] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static: resolved record: 127.0.0.1
+[DEBUG] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static, resolving host localhost successful, returned 1 addresses
+[TRACE] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static: updating expiry for 127.0.0.1 for host localhost to 1658437039682826206
+[TRACE] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static: remaining record count for host 0
+[TRACE] [2022-07-21T20:56:49Z] [00007f78acbfa700] [dns] - static: remaining record count for host 1
+[WARN] [2022-07-21T20:56:50Z] [00007f79d062c700] [JavaCrtGeneral] - Not all native threads were successfully joined during gentle shutdown.  Memory may be leaked.

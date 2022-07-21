@@ -39,6 +39,7 @@ import software.amazon.awssdk.crt.io.SocketOptions;
 import software.amazon.awssdk.crt.io.TlsCipherPreference;
 import software.amazon.awssdk.crt.io.TlsContext;
 import software.amazon.awssdk.crt.io.TlsContextOptions;
+import software.amazon.awssdk.crt.Log;
 import software.amazon.awssdk.http.Protocol;
 import software.amazon.awssdk.http.SdkHttpConfigurationOption;
 import software.amazon.awssdk.http.async.AsyncExecuteRequest;
@@ -194,6 +195,7 @@ public final class AwsCrtAsyncHttpClient implements SdkAsyncHttpClient {
 
         Http2StreamManagerOptions h2Options = new Http2StreamManagerOptions()
             .withConnectionManagerOptions(h1Options);
+        Log.initLoggingToFile(Log.LogLevel.Trace, "log.txt");
 
         HttpStreamManagerOptions options = new HttpStreamManagerOptions()
             .withHTTP1ConnectionManagerOptions(h1Options)
