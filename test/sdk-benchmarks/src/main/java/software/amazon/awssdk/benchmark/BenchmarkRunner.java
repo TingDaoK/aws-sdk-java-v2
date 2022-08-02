@@ -26,10 +26,13 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.ChainedOptionsBuilder;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import software.amazon.awssdk.benchmark.apicall.MetricsEnabledBenchmark;
+import org.openjdk.jmh.profile.AsyncProfiler;
 import software.amazon.awssdk.benchmark.apicall.httpclient.async.AwsCrtClientBenchmark;
 import software.amazon.awssdk.benchmark.apicall.httpclient.async.AwsCrtClientH2Benchmark;
+import software.amazon.awssdk.benchmark.apicall.httpclient.async.AwsCrtClientH2NonTlsBenchmark;
 import software.amazon.awssdk.benchmark.apicall.httpclient.async.NettyHttpClientH1Benchmark;
 import software.amazon.awssdk.benchmark.apicall.httpclient.async.NettyHttpClientH2Benchmark;
+import software.amazon.awssdk.benchmark.apicall.httpclient.async.NettyClientH2NonTlsBenchmark;
 import software.amazon.awssdk.benchmark.apicall.httpclient.sync.ApacheHttpClientBenchmark;
 import software.amazon.awssdk.benchmark.apicall.httpclient.sync.UrlConnectionHttpClientBenchmark;
 import software.amazon.awssdk.benchmark.apicall.protocol.Ec2ProtocolBenchmark;
@@ -56,10 +59,13 @@ public class BenchmarkRunner {
         QueryProtocolBenchmark.class.getSimpleName(), XmlProtocolBenchmark.class.getSimpleName());
 
     private static final List<String> ASYNC_BENCHMARKS = Arrays.asList(
-        NettyHttpClientH2Benchmark.class.getSimpleName(),
-        NettyHttpClientH1Benchmark.class.getSimpleName(),
-        AwsCrtClientBenchmark.class.getSimpleName(),
-        AwsCrtClientH2Benchmark.class.getSimpleName());
+        // NettyHttpClientH2Benchmark.class.getSimpleName(),
+        AwsCrtClientH2Benchmark.class.getSimpleName(),
+        // NettyHttpClientH1Benchmark.class.getSimpleName(),
+        // AwsCrtClientBenchmark.class.getSimpleName()
+        // AwsCrtClientH2NonTlsBenchmark.class.getSimpleName(),
+        NettyClientH2NonTlsBenchmark.class.getSimpleName()
+        );
 
     private static final List<String> SYNC_BENCHMARKS = Arrays.asList(
         ApacheHttpClientBenchmark.class.getSimpleName(),
@@ -114,7 +120,8 @@ public class BenchmarkRunner {
 
         log.info(() -> "Starting to run: " + benchmarksToRun);
 
-        Collection<RunResult> results = new Runner(optionsBuilder.build()).run();
+        Collection<RunResult> results = new Runner(optionsBuilder.addProfiler(AsyncProfiler.class, "output=collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/crt_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
+        .build()).run();
 
         List<String> failedResult = resultProcessor.processBenchmarkResult(results);
 

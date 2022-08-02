@@ -36,6 +36,11 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.TearDown;
 import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
+import org.openjdk.jmh.profile.StackProfiler;
+import org.openjdk.jmh.profile.AsyncProfiler;
+import org.openjdk.jmh.runner.Runner;
+import org.openjdk.jmh.runner.options.Options;
+import org.openjdk.jmh.runner.options.OptionsBuilder;
 import software.amazon.awssdk.benchmark.apicall.httpclient.SdkHttpClientBenchmark;
 import software.amazon.awssdk.benchmark.utils.MockH2Server;
 import software.amazon.awssdk.crt.Log;
@@ -60,7 +65,7 @@ public class AwsCrtClientH2Benchmark implements SdkHttpClientBenchmark {
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
-        Log.initLoggingToFile(Log.LogLevel.Trace, "log.txt");
+        // Log.initLoggingToFile(Log.LogLevel.Error, "error_log.txt");
         mockServer = new MockH2Server(true);
         mockServer.start();
 
@@ -106,13 +111,13 @@ public class AwsCrtClientH2Benchmark implements SdkHttpClientBenchmark {
     }
 
     public static void main(String... args) throws Exception {
-        // Options opt = new OptionsBuilder()
-        //         .include(AwsCrtClientH2Benchmark.class.getSimpleName())
-        //         .addProfiler(StackProfiler.class)
-        //         .build();
-        // new Runner(opt).run();
-        AwsCrtClientH2Benchmark benchmark = new AwsCrtClientH2Benchmark();
-        benchmark.setup();
+        Options opt = new OptionsBuilder()
+                .include(AwsCrtClientH2Benchmark.class.getSimpleName())
+                .addProfiler(AsyncProfiler.class, "output=collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/crt_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
+                .build();
+        new Runner(opt).run();
+        // AwsCrtClientH2Benchmark benchmark = new AwsCrtClientH2Benchmark();
+        // benchmark.setup();
 
     }
 }

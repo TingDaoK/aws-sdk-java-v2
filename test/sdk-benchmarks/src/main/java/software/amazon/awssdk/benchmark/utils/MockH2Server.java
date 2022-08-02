@@ -23,6 +23,8 @@ import org.eclipse.jetty.server.SecureRequestCustomizer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.server.SslConnectionFactory;
+import org.eclipse.jetty.server.HttpConnectionFactory;
+import org.eclipse.jetty.http2.server.HTTP2CServerConnectionFactory;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
@@ -40,7 +42,22 @@ public class MockH2Server extends BaseMockServer {
     public MockH2Server(boolean usingAlpn) throws IOException {
         super();
         server = new Server();
+        ServerConnector connector = new ServerConnector(server);
+        connector.setPort(httpPort);
 
+        // HTTP Configuration
+        HttpConfiguration httpConfiguration = new HttpConfiguration();
+        httpConfiguration.setSecureScheme("https");
+        httpConfiguration.setSecurePort(httpsPort);
+        httpConfiguration.setSendXPoweredBy(true);
+        httpConfiguration.setSendServerVersion(true);
+
+        // HTTP Connector
+        ServerConnector http = new ServerConnector(server,
+                                                   new HttpConnectionFactory(httpConfiguration),
+                                                   new HTTP2CServerConnectionFactory(httpConfiguration));
+        http.setPort(httpPort);
+        server.addConnector(http);
 
         // HTTPS Configuration
         HttpConfiguration https = new HttpConfiguration();

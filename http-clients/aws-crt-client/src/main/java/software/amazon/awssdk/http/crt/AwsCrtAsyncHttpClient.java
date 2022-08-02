@@ -183,7 +183,6 @@ public final class AwsCrtAsyncHttpClient implements SdkAsyncHttpClient {
         HttpClientConnectionManagerOptions h1Options = new HttpClientConnectionManagerOptions()
             .withClientBootstrap(bootstrap)
             .withSocketOptions(socketOptions)
-            .withTlsContext(tlsContext)
             .withUri(uri)
             .withWindowSize(readBufferSize)
             .withMaxConnections(maxConnectionsPerEndpoint)
@@ -192,8 +191,16 @@ public final class AwsCrtAsyncHttpClient implements SdkAsyncHttpClient {
             .withMonitoringOptions(monitoringOptions)
             .withMaxConnectionIdleInMilliseconds(maxConnectionIdleInMilliseconds);
 
+        if ("https".equalsIgnoreCase(uri.getScheme())) {
+            h1Options.withTlsContext(tlsContext);
+        }
+
         Http2StreamManagerOptions h2Options = new Http2StreamManagerOptions()
             .withConnectionManagerOptions(h1Options);
+
+        if (!"https".equalsIgnoreCase(uri.getScheme())) {
+            h2Options.withPriorKnowledge(true);
+        }
 
         HttpStreamManagerOptions options = new HttpStreamManagerOptions()
             .withHTTP1ConnectionManagerOptions(h1Options)
