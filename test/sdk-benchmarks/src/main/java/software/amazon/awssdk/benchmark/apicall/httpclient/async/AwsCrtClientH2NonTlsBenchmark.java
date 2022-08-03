@@ -53,7 +53,7 @@ import software.amazon.awssdk.services.protocolrestjson.ProtocolRestJsonAsyncCli
  * Using aws-crt-client to test against local mock https server.
  */
 @State(Scope.Benchmark)
-@Warmup(iterations = 3, time = 15, timeUnit = TimeUnit.SECONDS)
+@Warmup(iterations = 5, time = 30, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 10, timeUnit = TimeUnit.SECONDS)
 @Fork(2) // To reduce difference between each run
 @BenchmarkMode(Mode.Throughput)
@@ -65,7 +65,7 @@ public class AwsCrtClientH2NonTlsBenchmark implements SdkHttpClientBenchmark {
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
-        Log.initLoggingToFile(Log.LogLevel.Trace, "trace_log.txt");
+        // Log.initLoggingToFile(Log.LogLevel.Trace, "trace_log.txt");
         mockServer = new MockH2Server(true);
         mockServer.start();
 

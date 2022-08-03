@@ -53,7 +53,7 @@ import software.amazon.awssdk.services.protocolrestjson.ProtocolRestJsonAsyncCli
  * Using aws-crt-client to test against local mock https server.
  */
 @State(Scope.Benchmark)
-@Warmup(iterations = 3, time = 15, timeUnit = TimeUnit.SECONDS)
+@Warmup(iterations = 5, time = 30, timeUnit = TimeUnit.SECONDS)
 @Measurement(iterations = 5, time = 10, timeUnit = TimeUnit.SECONDS)
 @Fork(2) // To reduce difference between each run
 @BenchmarkMode(Mode.Throughput)
