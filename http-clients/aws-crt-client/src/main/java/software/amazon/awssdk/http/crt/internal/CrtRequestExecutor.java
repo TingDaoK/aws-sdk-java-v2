@@ -138,12 +138,12 @@ public final class CrtRequestExecutor {
         crtHeaderList.add(new HttpHeader(":scheme", uri.getScheme()));
         crtHeaderList.add(new HttpHeader(":authority", uri.getHost()));
 
-        Optional<Long> contentLength = asyncRequest.requestContentPublisher().contentLength();
-        if (!sdkRequest.firstMatchingHeader(Header.CONTENT_LENGTH).isPresent() && contentLength.isPresent()) {
-            crtHeaderList.add(new HttpHeader(Header.CONTENT_LENGTH.toLowerCase(), Long.toString(contentLength.get())));
-        }
+        // Optional<Long> contentLength = asyncRequest.requestContentPublisher().contentLength();
+        // if (!sdkRequest.firstMatchingHeader(Header.CONTENT_LENGTH).isPresent() && contentLength.isPresent()) {
+        //     crtHeaderList.add(new HttpHeader(Header.CONTENT_LENGTH.toLowerCase(), Long.toString(contentLength.get())));
+        // }
 
-        sdkRequest.forEachHeader((key, value) -> value.stream().map(val -> new HttpHeader(key.toLowerCase(), val)).forEach(crtHeaderList::add));
+        // sdkRequest.forEachHeader((key, value) -> value.stream().map(val -> new HttpHeader(key.toLowerCase(), val)).forEach(crtHeaderList::add));
 
         return crtHeaderList;
     }

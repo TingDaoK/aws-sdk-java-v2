@@ -60,7 +60,7 @@ public class BenchmarkRunner {
 
     private static final List<String> ASYNC_BENCHMARKS = Arrays.asList(
         // NettyHttpClientH2Benchmark.class.getSimpleName(),
-        // AwsCrtClientH2Benchmark.class.getSimpleName(),
+        AwsCrtClientH2Benchmark.class.getSimpleName(),
         // NettyHttpClientH1Benchmark.class.getSimpleName(),
         // AwsCrtClientBenchmark.class.getSimpleName(),
         AwsCrtClientH2NonTlsBenchmark.class.getSimpleName()
@@ -120,8 +120,10 @@ public class BenchmarkRunner {
 
         log.info(() -> "Starting to run: " + benchmarksToRun);
 
-        Collection<RunResult> results = new Runner(optionsBuilder.addProfiler(AsyncProfiler.class, "output=collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/debug_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
+        Collection<RunResult> results = new Runner(optionsBuilder.addProfiler(AsyncProfiler.class, "output=text;interval=100000;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/flat_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
         .build()).run();
+        // Collection<RunResult> results = new Runner(optionsBuilder.addProfiler(AsyncProfiler.class, "output=text,collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/flat_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
+        // .build()).run();
 
         List<String> failedResult = resultProcessor.processBenchmarkResult(results);
 
