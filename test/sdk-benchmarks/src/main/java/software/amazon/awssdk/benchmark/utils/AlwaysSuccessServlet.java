@@ -32,9 +32,8 @@ public class AlwaysSuccessServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setStatus(HttpStatus.OK_200);
-    }
-    @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setStatus(HttpStatus.OK_200);
+        response.setContentType("application/json");
+        response.setContentLength(JSON_BODY.getBytes(StandardCharsets.UTF_8).length);
+        response.getOutputStream().print(JSON_BODY);
     }
 }
