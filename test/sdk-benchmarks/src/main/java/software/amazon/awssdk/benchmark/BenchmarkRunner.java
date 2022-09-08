@@ -59,12 +59,12 @@ public class BenchmarkRunner {
         QueryProtocolBenchmark.class.getSimpleName(), XmlProtocolBenchmark.class.getSimpleName());
 
     private static final List<String> ASYNC_BENCHMARKS = Arrays.asList(
-        // NettyHttpClientH2Benchmark.class.getSimpleName(),
+        NettyHttpClientH2Benchmark.class.getSimpleName(),
         AwsCrtClientH2Benchmark.class.getSimpleName(),
         // NettyHttpClientH1Benchmark.class.getSimpleName(),
         // AwsCrtClientBenchmark.class.getSimpleName(),
-        AwsCrtClientH2NonTlsBenchmark.class.getSimpleName()
-        // NettyClientH2NonTlsBenchmark.class.getSimpleName()
+        AwsCrtClientH2NonTlsBenchmark.class.getSimpleName(),
+        NettyClientH2NonTlsBenchmark.class.getSimpleName()
         );
 
     private static final List<String> SYNC_BENCHMARKS = Arrays.asList(
