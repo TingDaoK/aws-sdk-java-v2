@@ -22,6 +22,8 @@ import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.trustAllTlsA
 import static software.amazon.awssdk.http.SdkHttpConfigurationOption.PROTOCOL;
 
 import io.netty.handler.ssl.SslProvider;
+
+import java.net.URI;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -56,7 +58,7 @@ import software.amazon.awssdk.services.protocolrestjson.ProtocolRestJsonAsyncCli
 @BenchmarkMode(Mode.Throughput)
 public class NettyHttpClientH2Benchmark extends BaseNettyBenchmark {
 
-    private MockH2Server mockServer;
+    // private MockH2Server mockServer;
     private SdkAsyncHttpClient sdkHttpClient;
 
     @Param({DEFAULT_JDK_SSL_PROVIDER, OPEN_SSL_PROVIDER})
@@ -64,8 +66,8 @@ public class NettyHttpClientH2Benchmark extends BaseNettyBenchmark {
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
-        mockServer = new MockH2Server(false);
-        mockServer.start();
+        // mockServer = new MockH2Server(false);
+        // mockServer.start();
 
         SslProvider sslProvider = getSslProvider(sslProviderValue);
 
@@ -75,7 +77,7 @@ public class NettyHttpClientH2Benchmark extends BaseNettyBenchmark {
                                                                       .put(PROTOCOL, Protocol.HTTP2)
                                                                       .build());
         client = ProtocolRestJsonAsyncClient.builder()
-                                            .endpointOverride(mockServer.getHttpsUri())
+                                            .endpointOverride(URI.create(String.format("https://localhost:8443/echo")))
                                             .httpClient(sdkHttpClient)
                                             .build();
 
@@ -85,7 +87,7 @@ public class NettyHttpClientH2Benchmark extends BaseNettyBenchmark {
 
     @TearDown(Level.Trial)
     public void tearDown() throws Exception {
-        mockServer.stop();
+        // mockServer.stop();
         sdkHttpClient.close();
         client.close();
     }

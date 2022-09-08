@@ -21,6 +21,7 @@ import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.countDownUpo
 import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.trustAllTlsAttributeMapBuilder;
 import static software.amazon.awssdk.http.SdkHttpConfigurationOption.PROTOCOL;
 
+import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -66,15 +67,15 @@ public class AwsCrtClientH2Benchmark implements SdkHttpClientBenchmark {
     @Setup(Level.Trial)
     public void setup() throws Exception {
         // Log.initLoggingToFile(Log.LogLevel.Error, "error_log.txt");
-        mockServer = new MockH2Server(true);
-        mockServer.start();
+        // mockServer = new MockH2Server(true);
+        // mockServer.start();
 
         sdkHttpClient = AwsCrtAsyncHttpClient.builder()
                                                .buildWithDefaults(trustAllTlsAttributeMapBuilder()
                                                                       .put(PROTOCOL, Protocol.HTTP2)
                                                                       .build());
         client = ProtocolRestJsonAsyncClient.builder()
-                                            .endpointOverride(mockServer.getHttpsUri())
+                                            .endpointOverride(URI.create(String.format("https://localhost:8443/echo")))
                                             .httpClient(sdkHttpClient)
                                             .build();
 
@@ -84,7 +85,7 @@ public class AwsCrtClientH2Benchmark implements SdkHttpClientBenchmark {
 
     @TearDown(Level.Trial)
     public void tearDown() throws Exception {
-        mockServer.stop();
+        // mockServer.stop();
         client.close();
         sdkHttpClient.close();
     }
@@ -113,7 +114,7 @@ public class AwsCrtClientH2Benchmark implements SdkHttpClientBenchmark {
     public static void main(String... args) throws Exception {
         Options opt = new OptionsBuilder()
                 .include(AwsCrtClientH2Benchmark.class.getSimpleName())
-                .addProfiler(AsyncProfiler.class, "output=collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/crt_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
+                // .addProfiler(AsyncProfiler.class, "output=collapsed;dir=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/crt_test/;libPath=/local/home/dengket/crts/aws-crt-java/aws-sdk-java-v2/test/sdk-benchmarks/async-profiler-2.8.3-linux-x64/build/libasyncProfiler.so")
                 .build();
         new Runner(opt).run();
         // AwsCrtClientH2Benchmark benchmark = new AwsCrtClientH2Benchmark();

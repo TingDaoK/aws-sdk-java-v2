@@ -21,6 +21,7 @@ import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.countDownUpo
 import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.trustAllTlsAttributeMapBuilder;
 import static software.amazon.awssdk.http.SdkHttpConfigurationOption.PROTOCOL;
 
+import java.net.URI;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
@@ -59,22 +60,22 @@ import software.amazon.awssdk.services.protocolrestjson.ProtocolRestJsonAsyncCli
 @BenchmarkMode(Mode.Throughput)
 public class AwsCrtClientH2NonTlsBenchmark implements SdkHttpClientBenchmark {
 
-    private MockH2Server mockServer;
+    // private MockH2Server mockServer;
     private SdkAsyncHttpClient sdkHttpClient;
     private ProtocolRestJsonAsyncClient client;
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
         // Log.initLoggingToFile(Log.LogLevel.Trace, "trace_log.txt");
-        mockServer = new MockH2Server(true);
-        mockServer.start();
+        // mockServer = new MockH2Server(true);
+        // mockServer.start();
 
         sdkHttpClient = AwsCrtAsyncHttpClient.builder()
                                                .buildWithDefaults(trustAllTlsAttributeMapBuilder()
                                                                       .put(PROTOCOL, Protocol.HTTP2)
                                                                       .build());
         client = ProtocolRestJsonAsyncClient.builder()
-                                            .endpointOverride(mockServer.getHttpUri())
+                                            .endpointOverride(URI.create(String.format("http://ec2-52-91-61-78.compute-1.amazonaws.com/")))
                                             .httpClient(sdkHttpClient)
                                             .build();
 
@@ -84,7 +85,7 @@ public class AwsCrtClientH2NonTlsBenchmark implements SdkHttpClientBenchmark {
 
     @TearDown(Level.Trial)
     public void tearDown() throws Exception {
-        mockServer.stop();
+        // mockServer.stop();
         client.close();
         sdkHttpClient.close();
     }

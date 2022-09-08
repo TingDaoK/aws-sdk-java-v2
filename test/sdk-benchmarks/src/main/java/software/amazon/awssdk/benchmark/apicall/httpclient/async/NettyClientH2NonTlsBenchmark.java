@@ -18,6 +18,7 @@ package software.amazon.awssdk.benchmark.apicall.httpclient.async;
 import static software.amazon.awssdk.http.SdkHttpConfigurationOption.PROTOCOL;
 import static software.amazon.awssdk.benchmark.utils.BenchmarkUtils.trustAllTlsAttributeMapBuilder;
 
+import java.net.URI;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -51,19 +52,19 @@ import software.amazon.awssdk.http.nio.netty.NettyNioAsyncHttpClient;
 @BenchmarkMode(Mode.Throughput)
 public class NettyClientH2NonTlsBenchmark extends BaseNettyBenchmark {
 
-    private MockH2Server mockServer;
+    // private MockH2Server mockServer;
     private SdkAsyncHttpClient sdkHttpClient;
 
     @Setup(Level.Trial)
     public void setup() throws Exception {
-        mockServer = new MockH2Server(false);
-        mockServer.start();
+        // mockServer = new MockH2Server(false);
+        // mockServer.start();
         sdkHttpClient = NettyNioAsyncHttpClient.builder()
                                                .buildWithDefaults(trustAllTlsAttributeMapBuilder()
                                                                       .put(PROTOCOL, Protocol.HTTP2)
                                                                       .build());
         client = ProtocolRestJsonAsyncClient.builder()
-                                            .endpointOverride(mockServer.getHttpUri())
+                                            .endpointOverride(URI.create(String.format("http://ec2-52-91-61-78.compute-1.amazonaws.com/")))
                                             .httpClient(sdkHttpClient)
                                             .build();
         // Making sure the request actually succeeds
@@ -72,7 +73,7 @@ public class NettyClientH2NonTlsBenchmark extends BaseNettyBenchmark {
 
     @TearDown(Level.Trial)
     public void tearDown() throws Exception {
-        mockServer.stop();
+        // mockServer.stop();
         client.close();
     }
 
